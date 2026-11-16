@@ -1,37 +1,53 @@
-# Dragoon — RU Closed Beta
+# Dragoon
 
-本仓库用于 Dragoon 俄军版本的私有内测分发和问题反馈。
+[下载当前完整内测版](https://github.com/NMSLTMSL258/Dragoon/releases/tag/beta-20261116)
 
-## 下载与安装
+Dragoon — Closed Beta — 2026-11-16
 
-1. 接受仓库邀请，并登录受邀的 GitHub 账号。
-2. 打开本仓库的 **Releases**，下载 `Dragoon_RU_Beta_20261111_Full.zip`。GitHub 自动生成的 `Source code` ZIP 不包含完整 MOD。
-3. 正常退出 Company of Heroes 2。
-4. 将整包中的 `mods` 文件夹合并到自己的“文档/My Games/Company of Heroes 2”目录。
-5. 如有旧版 Dragoon/Purple Dragon，先移出该 MOD 的旧副本，取消退役资源分卷订阅，避免相同身份的版本冲突。
+本版包含当前已实装的 RU、CH、US、EU、MEC 内容。完整本体、模型资源、胜利条件，共三个 SGA。
+没有降低模型、贴图和动画精度。发布版具有独立身份，可以与本机开发版并存。
 
-安装完成后应有三个文件：
+GitHub 下载
+1. 将 .001、.002 两段和 Merge_Dragoon.cmd 下载到同一文件夹。
+2. 双击 Merge_Dragoon.cmd，等待显示 OK。工具调用 Windows 自带 PowerShell 合并，并自动校验 SHA-256，无需管理员权限。
+3. 生成 Dragoon_Beta_20261116_Full.zip 后，正常解压。两个分段不能单独解压。
+若拿到的是别人转发的完整 ZIP，直接解压即可，不用合并。
 
-```text
-mods/tuning/Dragoon.sga
-mods/assets/Dragoon_Assets.sga
-mods/gamemode/Dragoon_Commanders.sga
-```
+安装
+1. 正常退出 Company of Heroes 2。
+2. 找到“文档/My Games/Company of Heroes 2”，或你此前搬迁后的实际目录。
+3. 将整包中的 mods 文件夹合并进去。安装后应有：
+   mods/tuning/Dragoon_Release.sga
+   mods/assets/Dragoon_Release_Assets.sga
+   mods/gamemode/Dragoon_Release_Commanders.sga
+4. 调校选择 Dragoon - Release。
+   胜利条件选择 Dragoon Release Commanders - Victory Points
+   或 Dragoon Release Commanders - Annihilation。
+5. 开发版与这份发布版可以并存。以后更新发布版时，请替换这三个发布文件；不要把同一发布身份的旧副本留在 mods 的其他子目录。
 
-建立自定义对局时，调校选择 **Dragoon | RU Beta**，胜利条件选择 **Dragoon Commanders - Victory Points** 或 **Dragoon Commanders - Annihilation**。俄军使用原版苏军阵营入口。
+测试范围与反馈
+本版包含最新三方正式交付：车辆炮塔修补、MP7/OG-7V投放按钮、步兵火箭筒动作与声光，以及此前已装入的模型、UI、武器、指挥官和技能内容。
+文件原生 CRC、完整解包、GUID/依赖隔离及逐成员回读已核对。这些不代表全部模型或玩法已实机通过，当前仍为内测。
+反馈请提供阵营、单位、操作步骤、地图、截图或报错。
 
-## 测试范围
+分发
+GitHub 仓库保持私有：测试员须先获得仓库访问权并登录，单有链接不自动取得权限。
+GitHub 自动生成的 Source code ZIP 只有仓库说明，不是完整 MOD。
+工坊条目是下载引导，订阅它不会自动安装完整三个 SGA。
 
-这是 2026-11-11 的完整 RU 内测快照；CH 内容未并入。本次发布沿用现有整包，没有重新压缩模型、贴图或动画。
+来源与致谢
+项目由作者策划与测试，🤍、🖤、🌙💜等协作制作。
+Commander framework adapted from “New Commanders test” by Janne252.
+2A36: “2A36 Giatsint-B Howtizer (WARNO)” by KojfDiscord; CC BY 4.0.
+https://sketchfab.com/3d-models/2a36-giatsint-b-howtizer-warno-64d56970e7944223b773c24549864e60
+Creator: https://sketchfab.com/KojfDiscord
+License: https://creativecommons.org/licenses/by/4.0/
+Existing third-party rights remain with their creators. This private distribution adds no open-source license.
 
-三个 SGA 的 ZIP CRC 和 SHA-256 已核对；SGA 内容与此前通过原生校验的完整三包一致。这些属于文件校验，测试员电脑上的安装、显示和玩法仍需实机验证。
+English quick start
+Download both .001/.002 parts and Merge_Dragoon.cmd into one folder, then double-click the CMD to join and verify the complete ZIP.
+Close CoH2. Merge the ZIP's mods folder into Documents/My Games/Company of Heroes 2 (or your relocated directory).
+Select tuning Dragoon - Release and matching Dragoon Release Commanders Victory Points/Annihilation.
+The release has independent identities and can coexist with the development build. Only replace older copies of the same release.
+File checks passed; full tester-side runtime acceptance is not established.
 
-已知未完成项沿用整包说明：2B9 Vasilek、自选指挥官与原生头像/五格教义栏动态绑定，以及本轮部分 UI 修后显示。
-
-遇到问题，请在 Issues 中写明地图、阵营、单位、操作步骤，并附截图或报错；闪退请说明发生在加载、部署前还是对局中。
-
-## 分发状态
-
-当前为私有内测。获得仓库链接不等于获得访问权限，测试员须先接受邀请。
-
-完整成品作为 Release 附件分发，不放进 Git 历史。本仓库目前提供安装说明、校验记录和反馈入口；尚未导入完整工程源码，也未添加公开开源许可证。
